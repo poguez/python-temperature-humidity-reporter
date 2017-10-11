@@ -1,0 +1,10 @@
+[Unit]
+Description=Python service to read sensors
+
+[Service]
+WorkingDirectory=/home/pi
+ExecStart=/usr/bin/python tempDHT.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
