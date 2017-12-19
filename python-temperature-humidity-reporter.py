@@ -7,12 +7,12 @@ from threading import Timer
 
 url = 'http://api.figs.noedominguez.com:9000/v1/measurement_event/'
 
-def hello():
+def main():
     try:
         h,t = dht.read_retry(dht.DHT22, 4)
 
-        payloadT = {"measurement_id": 2, "magnitude": t, "created_at": ""} #Temperature
-        payloadH = {"measurement_id": 3, "magnitude": h, "created_at": ""} #Humidity
+        payloadT = {"measurement_id": 2, "magnitude": t, "measurement_area": 0, "created_at": ""} #Temperature
+        payloadH = {"measurement_id": 3, "magnitude": h, "measurement_area": 0, "created_at": ""} #Humidity
         headers = {'Content-type': 'application/json'}
 
         myResponseT = requests.post(url, data=json.dumps(payloadT), headers=headers)  #for temperature
@@ -33,5 +33,5 @@ def hello():
         pass
 
 while True:
-        hello()
+        main()
         time.sleep(60)
