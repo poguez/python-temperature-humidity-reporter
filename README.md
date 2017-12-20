@@ -3,17 +3,21 @@
 Raspbian-Python-based service for reporting temperature and humidity with AOSONG 2302. 
 
 ## Dependencies
-Adafruit_Python_DHT v 1.3.2
-Raspbian Jessie
-There is an issue with upper versions because of Adafruit_Python_DHT dependency.
+
+[Adafruit_Python_DHT](https://github.com/adafruit/Adafruit_Python_DHT) v1.3.2
+
+Raspbian Jessie 
+(There is an issue with upper versions because of Adafruit_Python_DHT dependency.)
  
-check `requirements.txt`
+Also check `requirements.txt`
 
 ## Configuration
 
 Clone the repository:
 
 `git clone this repo in /home/pi`
+
+Configure your URL
 
 Copy the service to systemd:
 
@@ -36,3 +40,6 @@ Start the service:
 `sudo systemctl start python-temperature-humidity-reporter.service`
 
 
+## Related repositories
+
+[Scala Akka-http measurement store](https://github.com/poguez/measurement-store-service)

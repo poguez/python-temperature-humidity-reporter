@@ -3,7 +3,8 @@ import json
 import Adafruit_DHT as dht
 import time
 
-url = 'http://api.figs.noedominguez.com:9000/v1/measurement_event/'
+# Add your own URL see README for related REST Service.
+url = 'http://api.figs.noedominguez.com:9000/v1/measurement-event/'
 
 def main():
     try:
