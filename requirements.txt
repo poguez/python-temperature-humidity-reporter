@@ -1,3 +1,2 @@
 requests
-json
-Adafruit_DHT
+Adafruit_Python_DHT

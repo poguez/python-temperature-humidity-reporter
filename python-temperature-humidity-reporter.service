@@ -2,8 +2,8 @@
 Description=Python service to read sensors
 
 [Service]
-WorkingDirectory=/home/pi
-ExecStart=/usr/bin/python tempDHT.py
+WorkingDirectory=/home/pi/python-temperature-humidity-reporter/
+ExecStart=/usr/bin/python python-temperature-humidity-reporter.py
 Restart=always
 
 [Install]
