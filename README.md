@@ -1,6 +1,6 @@
 # Python Temperature and humidity reporter for Raspberry Pi
 
-Raspbian-Python-based service for reporting temperature and humidity with AOSONG 2302. 
+Raspbian-Python-based service for reporting temperature and humidity with AOSONG 2302 or any DHT sensor. 
 
 ## Dependencies
 
@@ -11,13 +11,39 @@ Raspbian Jessie
  
 Also check `requirements.txt`
 
+## Test hardware
+- Raspberry Pi 3
+- AOSONG 2302
+
+## Install Adafruit_Python_DHT from source
+
+Install from source the version 1.3.2 because it is not yet available on PyPi.
+
+```
+
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+cd Adafruit_Python_DHT
+sudo python setup.py install
+
+```
+
 ## Configuration
 
 Clone the repository:
 
 `git clone this repo in /home/pi`
 
-Configure your URL
+Configure your URL and json payload parameters.
+```
+
+    {
+        "measurement_type_id": 2,
+        "magnitude": t,
+        "measurement_area": 1, 
+        "created_at": ""
+    }
+
+```
 
 Copy the service to systemd:
 
@@ -38,7 +64,6 @@ Enable the service:
 Start the service:
 
 `sudo systemctl start python-temperature-humidity-reporter.service`
-
 
 ## Related repositories
 
